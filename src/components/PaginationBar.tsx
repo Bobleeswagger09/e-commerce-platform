@@ -1,4 +1,5 @@
 import Link from "next/link";
+import React from "react";
 
 interface PaginationBarProps {
   currentPage: number;
@@ -12,7 +13,7 @@ export default function PaginationBar({
   const maxPage = Math.min(totalPages, Math.max(currentPage + 4, 10));
   const minPage = Math.max(1, Math.min(currentPage - 5, maxPage - 9));
 
-  const numberedPageItems: JSX.Element[] = [];
+  const numberedPageItems: React.ReactNode[] = [];
 
   for (let page = minPage; page <= maxPage; page++) {
     numberedPageItems.push(

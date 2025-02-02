@@ -1,6 +1,7 @@
 "use client";
 
 import { useCart } from "@/app/context/CartContext";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 // SVG Trash Icon
@@ -21,6 +22,14 @@ const TrashIconSVG = () => (
   </svg>
 );
 
+interface CartItem {
+  id: number;
+  title: string;
+  price: number;
+  quantity: number;
+  image: string;
+}
+
 const CartPage = () => {
   const { cart, removeFromCart, totalPrice } = useCart();
   const router = useRouter();
@@ -34,16 +43,18 @@ const CartPage = () => {
       ) : (
         <div>
           <div className="space-y-6">
-            {cart.map((item) => (
+            {cart.map((item: CartItem) => (
               <div
                 key={item.id}
                 className="flex justify-between items-center bg-white shadow-md rounded-lg p-4 hover:shadow-xl transition duration-300 ease-in-out"
               >
                 <div className="flex items-center space-x-4">
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.title}
                     className="w-16 h-16 object-cover rounded-lg"
+                    width={64} // You can also provide dimensions for optimization
+                    height={64}
                   />
                   <div>
                     <h4 className="text-lg font-medium text-gray-800">
@@ -73,7 +84,7 @@ const CartPage = () => {
           <div className="mt-6 flex justify-between items-center bg-white p-4 rounded-lg shadow-md">
             <p className="text-xl font-semibold text-gray-800">Total: </p>
             <span className="text-2xl font-bold text-green-600">
-              ${totalPrice.toFixed(2)}
+              ${totalPrice?.toFixed(2)} {/* Added optional chaining */}
             </span>
           </div>
 

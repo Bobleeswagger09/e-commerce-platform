@@ -24,7 +24,7 @@ const CheckoutPage = () => {
 
   const validateForm = () => {
     let valid = true;
-    let newErrors = { name: "", address: "", phone: "", email: "" };
+    const newErrors = { name: "", address: "", phone: "", email: "" }; // Changed from let to const
 
     if (!form.name) {
       newErrors.name = "Name is required";

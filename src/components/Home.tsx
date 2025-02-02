@@ -1,6 +1,5 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import HeroSection from "@/components/HeroSection";
 import { ProductCard } from "@/components/ProductCard";
 import Pagination from "@/components/PaginationBox";
@@ -11,16 +10,16 @@ export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(6); // Default for large screens
+  const [pageSize, setPageSize] = useState(6);
 
   // Function to update pageSize based on screen width
   const updatePageSize = () => {
     if (window.innerWidth < 640) {
-      setPageSize(3); // Small screens (e.g., mobile)
+      setPageSize(3);
     } else if (window.innerWidth < 1024) {
-      setPageSize(4); // Medium screens (e.g., tablets)
+      setPageSize(4);
     } else {
-      setPageSize(6); // Large screens (e.g., desktops)
+      setPageSize(6);
     }
   };
 
@@ -70,7 +69,12 @@ export default function Home() {
         ))}
       </div>
 
-      <Pagination totalPages={totalPages} currentPage={currentPage} />
+      {/* Pagination */}
+      <Pagination
+        totalPages={totalPages}
+        currentPage={currentPage}
+        onPageChange={setCurrentPage} // Pass setCurrentPage to Pagination
+      />
     </div>
   );
 }
