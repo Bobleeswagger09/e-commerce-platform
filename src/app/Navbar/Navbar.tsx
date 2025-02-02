@@ -1,14 +1,31 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react"; // Importing icons for mobile menu toggle
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleDropdown = () => {
-    // Toggle dropdown visibility
-    setIsOpen((prev) => !prev);
-  };
+
+  // Explicitly typing the ref as a div element or null
+  const menuRef = useRef<HTMLDivElement | null>(null);
+
+  // Close the menu if the user clicks outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false); // Close the menu
+      }
+    };
+
+    // Add event listener for click outside
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <nav className="bg-primary text-primary-content shadow-md p-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -42,7 +59,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           className="md:hidden text-white focus:outline-none"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setIsOpen(!isOpen)} // Toggle open state directly
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -50,6 +67,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation Menu */}
       <div
+        ref={menuRef} // Attach the ref to the mobile menu
         className={`md:hidden fixed top-0 right-0 w-3/4 h-full bg-primary shadow-lg transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 ease-in-out p-6`}
@@ -57,7 +75,7 @@ export default function Navbar() {
         {/* Close Button Inside Menu */}
         <button
           className="absolute top-4 right-4 text-white focus:outline-none"
-          onClick={() => setIsOpen(true)}
+          onClick={() => setIsOpen(false)} // Close the menu directly
         >
           <X size={28} />
         </button>
@@ -67,21 +85,21 @@ export default function Navbar() {
           <Link
             href="/products"
             className="text-lg hover:bg-secondary hover:text-white p-2 rounded-md transition duration-300 font-semibold"
-            onClick={toggleDropdown}
+            onClick={() => setIsOpen(false)} // Close the menu when a link is clicked
           >
             Products
           </Link>
           <Link
             href="/cart"
             className="text-lg hover:bg-secondary hover:text-white p-2 rounded-md transition duration-300 font-semibold"
-            onClick={() => setIsOpen(true)}
+            onClick={() => setIsOpen(false)} // Close the menu when a link is clicked
           >
             Cart
           </Link>
           <Link
             href="/checkout"
             className="text-lg hover:bg-secondary hover:text-white p-2 rounded-md transition duration-300 font-semibold"
-            onClick={() => setIsOpen(true)}
+            onClick={() => setIsOpen(false)} // Close the menu when a link is clicked
           >
             Checkout
           </Link>

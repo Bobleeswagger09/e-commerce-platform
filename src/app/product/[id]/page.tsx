@@ -52,24 +52,23 @@ const ProductPage = ({ params }: { params: Promise<any> }) => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="flex flex-col items-center space-y-6">
-        <div className="relative w-full max-w-md mx-auto">
+      <div className="flex flex-col items-center space-y-6 max-w-screen-sm mx-auto">
+        <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px]">
           <Image
             src={product.image}
             alt={product.title}
-            className="object-contain w-full h-full rounded-lg
-          transition-transform duration-300 transform hover:scale-105"
+            className="object-contain w-full h-full rounded-lg transition-transform duration-300 transform hover:scale-105"
             width={500}
             height={500}
           />
         </div>
 
-        <div className="text-center">
-          <h1 className="text-3xl font-semibold text-gray-900 mb-4 ">
+        <div className="text-center px-4">
+          <h1 className="text-3xl font-semibold text-gray-900 mb-4">
             {product.title}
           </h1>
           <p className="text-xl text-gray-600 mb-4">${product.price}</p>
-          <p className="text-gray-800 text-base mb-6 w-[500px] mx-auto">
+          <p className="text-gray-800 text-base mb-6 w-full sm:w-[350px] md:w-[400px] lg:w-[500px] mx-auto">
             {product.description}
           </p>
         </div>
@@ -77,7 +76,7 @@ const ProductPage = ({ params }: { params: Promise<any> }) => {
         <div className="flex justify-center">
           <button
             onClick={() => handleAddToCart(product)}
-            className=" bg-blue-500 text-white py-2 px-6 rounded-lg transform transition-all duration-300 hover:bg-blue-600 hover:scale-105 "
+            className="bg-blue-500 text-white py-2 px-6 rounded-lg transform transition-all duration-300 hover:bg-blue-600 hover:scale-105"
           >
             Add to Cart
           </button>

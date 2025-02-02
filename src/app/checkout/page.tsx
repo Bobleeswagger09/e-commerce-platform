@@ -2,6 +2,7 @@
 
 import { useCart } from "@/app/context/CartContext";
 import { useState } from "react";
+import { useRouter } from "next/navigation"; // Import useRouter
 
 const CheckoutPage = () => {
   const { cart, totalPrice } = useCart();
@@ -17,6 +18,8 @@ const CheckoutPage = () => {
     phone: "",
     email: "",
   });
+
+  const router = useRouter(); // Initialize router
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -59,6 +62,9 @@ const CheckoutPage = () => {
         phone: "",
         email: "",
       });
+
+      // Redirect to the homepage
+      router.push("/"); // This will redirect to the homepage
     }
   };
 

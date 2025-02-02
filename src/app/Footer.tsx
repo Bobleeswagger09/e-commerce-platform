@@ -1,100 +1,75 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
-    <footer className="bg-secondary p-10 text-white">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          <div>
+    <footer className="bg-secondary p-6 sm:p-10 text-white">
+      <div className="container mx-auto w-[90%]">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <div className="space-y-4">
             <span className="footer-title">Services</span>
-            <a
-              href="/branding"
-              className="link-hover link block cursor-pointer"
-            >
-              Branding
-            </a>
-            <a href="/design" className="link-hover link block cursor-pointer">
-              Design
-            </a>
-            <a
-              href="/marketing"
-              className="link-hover link block cursor-pointer"
-            >
-              Marketing
-            </a>
-            <a
-              href="/advertisement"
-              className="link-hover link block cursor-pointer"
-            >
-              Advertisement
-            </a>
+            <Link href="/" passHref>
+              <a className="link-hover block cursor-pointer">Branding</a>
+            </Link>
+            <Link href="/" passHref>
+              <a className="link-hover block cursor-pointer">Design</a>
+            </Link>
+            <Link href="/" passHref>
+              <a className="link-hover block cursor-pointer">Marketing</a>
+            </Link>
+            <Link href="/" passHref>
+              <a className="link-hover block cursor-pointer">Advertisement</a>
+            </Link>
           </div>
 
-          <div>
+          <div className="space-y-4">
             <span className="footer-title">Company</span>
-            <a href="/about" className="link-hover link block cursor-pointer">
-              About us
-            </a>
-            <a href="/contact" className="link-hover link block cursor-pointer">
-              Contact
-            </a>
-            <a href="/jobs" className="link-hover link block cursor-pointer">
-              Jobs
-            </a>
-            <a
-              href="/press-kit"
-              className="link-hover link block cursor-pointer"
-            >
-              Press kit
-            </a>
+            <Link href="/" passHref>
+              <a className="link-hover block cursor-pointer">About us</a>
+            </Link>
+            <Link href="/" passHref>
+              <a className="link-hover block cursor-pointer">Contact</a>
+            </Link>
+            <Link href="/" passHref>
+              <a className="link-hover block cursor-pointer">Jobs</a>
+            </Link>
+            <Link href="/" passHref>
+              <a className="link-hover block cursor-pointer">Press kit</a>
+            </Link>
           </div>
 
-          <div>
+          <div className="space-y-4">
             <span className="footer-title">Legal</span>
-            <a
-              href="/terms-of-use"
-              className="link-hover link block cursor-pointer"
-            >
-              Terms of use
-            </a>
-            <a
-              href="/privacy-policy"
-              className="link-hover link block cursor-pointer"
-            >
-              Privacy policy
-            </a>
-            <a
-              href="/cookie-policy"
-              className="link-hover link block cursor-pointer"
-            >
-              Cookie policy
-            </a>
+            <Link href="/" passHref>
+              <a className="link-hover block cursor-pointer">Terms of use</a>
+            </Link>
+            <Link href="/" passHref>
+              <a className="link-hover block cursor-pointer">Privacy policy</a>
+            </Link>
+            <Link href="/" passHref>
+              <a className="link-hover block cursor-pointer">Cookie policy</a>
+            </Link>
           </div>
 
-          <div>
+          <div className="space-y-4">
             <span className="footer-title">Follow us</span>
-            <a
-              href="https://facebook.com"
-              className="link-hover link block cursor-pointer"
+            <Link href="/" passHref>
+              <a className="link-hover block cursor-pointer">Facebook</a>
+            </Link>
+            <Link href="https://x.com/SecureBootSammy" passHref>
+              <a className="link-hover block cursor-pointer">Twitter</a>
+            </Link>
+            <Link
+              href="https://portfolio-git-master-bobleeswagger09s-projects.vercel.app/"
+              passHref
             >
-              Facebook
-            </a>
-            <a
-              href="https://twitter.com"
-              className="link-hover link block cursor-pointer"
+              <a className="link-hover block cursor-pointer">Portfolio</a>
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/victor-samuel-42a092220/"
+              passHref
             >
-              Twitter
-            </a>
-            <a
-              href="https://instagram.com"
-              className="link-hover link block cursor-pointer"
-            >
-              Instagram
-            </a>
-            <a
-              href="https://linkedin.com"
-              className="link-hover link block cursor-pointer"
-            >
-              LinkedIn
-            </a>
+              <a className="link-hover block cursor-pointer">LinkedIn</a>
+            </Link>
           </div>
         </div>
       </div>

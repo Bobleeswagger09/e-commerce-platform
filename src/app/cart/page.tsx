@@ -46,18 +46,18 @@ const CartPage = () => {
             {cart.map((item: CartItem) => (
               <div
                 key={item.id}
-                className="flex justify-between items-center bg-white shadow-md rounded-lg p-4 hover:shadow-xl transition duration-300 ease-in-out"
+                className="flex flex-col sm:flex-row justify-between items-center bg-white shadow-md rounded-lg p-4 hover:shadow-xl transition duration-300 ease-in-out"
               >
-                <div className="flex items-center space-x-4">
+                <div className="flex flex-col sm:flex-row gap-3 items-center space-x-4">
                   <Image
                     src={item.image}
                     alt={item.title}
                     className="w-16 h-16 object-cover rounded-lg"
-                    width={64} // You can also provide dimensions for optimization
+                    width={64}
                     height={64}
                   />
-                  <div>
-                    <h4 className="text-lg font-medium text-gray-800">
+                  <div className="">
+                    <h4 className="hidden md:block text-lg font-medium text-gray-800 ">
                       {item.title}
                     </h4>
                     <p className="text-sm text-gray-500">
@@ -65,7 +65,7 @@ const CartPage = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-4 mt-2 md:mt-0">
                   <span className="text-lg font-semibold text-gray-700">
                     ${item.price * item.quantity}
                   </span>
