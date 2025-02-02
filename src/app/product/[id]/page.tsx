@@ -1,33 +1,30 @@
 "use client";
 
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getProductById, Product } from "@/lib/api";
 import { useRouter } from "next/navigation";
 import { useCart } from "@/app/context/CartContext";
+import { use } from "react";
 import Image from "next/image";
 
-type Params = Promise<{ slug: string[] }>;
-type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
+interface ProductPage {
+  params: Promise<{
+    slug: string[];
+  }>;
+}
 
-export default function ProductPage(props: {
-  params: Params;
-  searchParams: SearchParams;
-}) {
-  const params = use(props.params); // Resolves the Promise
-
-  const slug = params?.slug?.[0]; // Extracts the product ID from slug array
-
+const ProductPage = ({ params }: { params: Promise<any> }) => {
+  const resolvedParams = use(params);
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
   const { addToCart } = useCart();
 
   useEffect(() => {
-    if (slug) {
+    if (resolvedParams?.id) {
       const fetchProduct = async () => {
-        setLoading(true);
         try {
-          const data = await getProductById(Number(slug));
+          const data = await getProductById(Number(resolvedParams.id));
           setProduct(data);
         } catch (error) {
           console.error("Failed to fetch product", error);
@@ -38,7 +35,7 @@ export default function ProductPage(props: {
 
       fetchProduct();
     }
-  }, [slug]);
+  }, [resolvedParams?.id]);
 
   const handleAddToCart = (product: Product) => {
     addToCart(product);
@@ -55,19 +52,19 @@ export default function ProductPage(props: {
           <Image
             src={product.image}
             alt={product.title}
-            className="object-contain w-full h-full rounded-lg transition-transform duration-300 transform hover:scale-105"
+            className="object-contain w-full h-full rounded-lg
+          transition-transform duration-300 transform hover:scale-105"
             width={500}
             height={500}
-            priority
           />
         </div>
 
         <div className="text-center">
-          <h1 className="text-3xl font-semibold text-gray-900 mb-4">
+          <h1 className="text-3xl font-semibold text-gray-900 mb-4 ">
             {product.title}
           </h1>
           <p className="text-xl text-gray-600 mb-4">${product.price}</p>
-          <p className="text-gray-800 text-base mb-6 max-w-md mx-auto">
+          <p className="text-gray-800 text-base mb-6 w-[500px] mx-auto">
             {product.description}
           </p>
         </div>
@@ -75,7 +72,7 @@ export default function ProductPage(props: {
         <div className="flex justify-center">
           <button
             onClick={() => handleAddToCart(product)}
-            className="bg-blue-500 text-white py-2 px-6 rounded-lg transform transition-all duration-300 hover:bg-blue-600 hover:scale-105"
+            className=" bg-blue-500 text-white py-2 px-6 rounded-lg transform transition-all duration-300 hover:bg-blue-600 hover:scale-105 "
           >
             Add to Cart
           </button>
@@ -83,4 +80,6 @@ export default function ProductPage(props: {
       </div>
     </div>
   );
-}
+};
+
+export default ProductPage;

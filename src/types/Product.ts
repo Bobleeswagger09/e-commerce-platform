@@ -39,3 +39,14 @@ export interface CartContextType {
 export interface ProductPageProps {
   id: number;
 }
+
+// Define type for metadata
+export type ProductMetadata = {
+  title: string;
+  description: string;
+  openGraph: {
+    title: string;
+    description: string;
+    images: { url: string }[];
+  };
+};
