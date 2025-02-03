@@ -62,7 +62,7 @@ export default function Footer() {
               Twitter
             </Link>
             <Link
-              href="https://portfolio-git-master-bobleeswagger09s-projects.vercel.app/"
+              href="https://samuelvictor.vercel.app/"
               className="link-hover block cursor-pointer"
             >
               Portfolio
