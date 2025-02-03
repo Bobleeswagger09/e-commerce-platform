@@ -5,14 +5,14 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <div className="flex flex-col-reverse md:flex-row items-center bg-foreground p-6 rounded-lg shadow-lg px-[10%] w-full lg:max-w-[97%] mx-auto">
+    <div className="relative z-[-10] flex flex-col-reverse md:flex-row items-center bg-foreground p-6 rounded-lg shadow-lg px-[10%] w-full lg:max-w-[97%] mx-auto">
       <div className="md:w-1/2 text-center md:text-left">
         <h2 className="text-3xl font-bold">Discover our Curated Collection</h2>
         <p className="mt-2 text-gray-600">
           Explore our carefully selected products for your home and lifestyle.
         </p>
         <Link href="/">
-          <button className="mt-4 px-6 py-2 bg-secondary text-white rounded-lg hover:bg-black transition ">
+          <button className="mt-4 px-6 py-2 bg-secondary text-white rounded-lg hover:bg-black transition">
             Shop Now
           </button>
         </Link>

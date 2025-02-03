@@ -2,73 +2,76 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary p-6 sm:p-10 text-white">
+    <footer className="relative z-50 sm:relative sm:z-auto bg-secondary p-6 sm:p-10 text-white">
       <div className="container mx-auto w-[90%]">
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
             <span className="footer-title">Services</span>
-            <Link href="/" passHref>
-              <a className="link-hover block cursor-pointer">Branding</a>
+            <Link href="/" className="link-hover block cursor-pointer">
+              Branding
             </Link>
-            <Link href="/" passHref>
-              <a className="link-hover block cursor-pointer">Design</a>
+            <Link href="/" className="link-hover block cursor-pointer">
+              Design
             </Link>
-            <Link href="/" passHref>
-              <a className="link-hover block cursor-pointer">Marketing</a>
+            <Link href="/" className="link-hover block cursor-pointer">
+              Marketing
             </Link>
-            <Link href="/" passHref>
-              <a className="link-hover block cursor-pointer">Advertisement</a>
+            <Link href="/" className="link-hover block cursor-pointer">
+              Advertisement
             </Link>
           </div>
 
           <div className="space-y-4">
             <span className="footer-title">Company</span>
-            <Link href="/" passHref>
-              <a className="link-hover block cursor-pointer">About us</a>
+            <Link href="/" className="link-hover block cursor-pointer">
+              About us
             </Link>
-            <Link href="/" passHref>
-              <a className="link-hover block cursor-pointer">Contact</a>
+            <Link href="/" className="link-hover block cursor-pointer">
+              Contact
             </Link>
-            <Link href="/" passHref>
-              <a className="link-hover block cursor-pointer">Jobs</a>
+            <Link href="/" className="link-hover block cursor-pointer">
+              Jobs
             </Link>
-            <Link href="/" passHref>
-              <a className="link-hover block cursor-pointer">Press kit</a>
+            <Link href="/" className="link-hover block cursor-pointer">
+              Press kit
             </Link>
           </div>
 
           <div className="space-y-4">
             <span className="footer-title">Legal</span>
-            <Link href="/" passHref>
-              <a className="link-hover block cursor-pointer">Terms of use</a>
+            <Link href="/" className="link-hover block cursor-pointer">
+              Terms of use
             </Link>
-            <Link href="/" passHref>
-              <a className="link-hover block cursor-pointer">Privacy policy</a>
+            <Link href="/" className="link-hover block cursor-pointer">
+              Privacy policy
             </Link>
-            <Link href="/" passHref>
-              <a className="link-hover block cursor-pointer">Cookie policy</a>
+            <Link href="/" className="link-hover block cursor-pointer">
+              Cookie policy
             </Link>
           </div>
 
           <div className="space-y-4">
             <span className="footer-title">Follow us</span>
-            <Link href="/" passHref>
-              <a className="link-hover block cursor-pointer">Facebook</a>
+            <Link href="/" className="link-hover block cursor-pointer">
+              Facebook
             </Link>
-            <Link href="https://x.com/SecureBootSammy" passHref>
-              <a className="link-hover block cursor-pointer">Twitter</a>
+            <Link
+              href="https://x.com/SecureBootSammy"
+              className="link-hover block cursor-pointer"
+            >
+              Twitter
             </Link>
             <Link
               href="https://portfolio-git-master-bobleeswagger09s-projects.vercel.app/"
-              passHref
+              className="link-hover block cursor-pointer"
             >
-              <a className="link-hover block cursor-pointer">Portfolio</a>
+              Portfolio
             </Link>
             <Link
               href="https://www.linkedin.com/in/victor-samuel-42a092220/"
-              passHref
+              className="link-hover block cursor-pointer"
             >
-              <a className="link-hover block cursor-pointer">LinkedIn</a>
+              LinkedIn
             </Link>
           </div>
         </div>
