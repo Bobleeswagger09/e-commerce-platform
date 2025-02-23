@@ -1,7 +1,8 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react"; // Importing icons for mobile menu toggle
+import { Menu, X } from "lucide-react";
+import ThemeToggle from "../themeProvider/ThemeToggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,6 +55,7 @@ export default function Navbar() {
           >
             Checkout
           </Link>
+          <ThemeToggle />
         </div>
 
         {/* Mobile Menu Button */}
@@ -92,17 +94,18 @@ export default function Navbar() {
           <Link
             href="/cart"
             className="text-lg hover:bg-secondary hover:text-white p-2 rounded-md transition duration-300 font-semibold"
-            onClick={() => setIsOpen(false)} // Close the menu when a link is clicked
+            onClick={() => setIsOpen(false)}
           >
             Cart
           </Link>
           <Link
             href="/checkout"
             className="text-lg hover:bg-secondary hover:text-white p-2 rounded-md transition duration-300 font-semibold"
-            onClick={() => setIsOpen(false)} // Close the menu when a link is clicked
+            onClick={() => setIsOpen(false)}
           >
             Checkout
           </Link>
+          <ThemeToggle />
         </div>
       </div>
     </nav>

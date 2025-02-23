@@ -118,7 +118,7 @@ const CheckoutPage = () => {
         {errors.email && <p className="text-red-500">{errors.email}</p>}
         <button
           type="submit"
-          className="mt-4 bg-secondary text-white px-4 py-2 rounded"
+          className="mt-4 bg-warning text-white px-4 py-2 rounded"
         >
           Place Order
         </button>

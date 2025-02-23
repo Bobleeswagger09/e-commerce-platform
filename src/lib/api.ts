@@ -13,7 +13,7 @@ export interface Product {
 export async function getProducts(): Promise<Product[]> {
   try {
     const response = await axios.get("https://fakestoreapi.com/products");
-    return response.data; // Return the products data
+    https: return response.data; // Return the products data
   } catch (error) {
     console.error("Error fetching products:", error);
     throw new Error("Error fetching products");

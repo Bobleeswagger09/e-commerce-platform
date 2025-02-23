@@ -13,6 +13,7 @@ export default {
         foreground: "#f6f6f6",
         primary: "#f4aa3a",
         darkPrimary: "#fab627",
+        darkMode: "#171717",
 
         secondary: "#18161b",
         accent: "#1be885",

@@ -1,8 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -51,7 +46,7 @@ const ProductPage = ({ params }: { params: Promise<any> }) => {
   if (!product) return <p>Product not found.</p>;
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 bg-[#f3f4f6] dark:text-black rounded-xl">
       <div className="flex flex-col items-center space-y-6 max-w-screen-sm mx-auto">
         <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px]">
           <Image

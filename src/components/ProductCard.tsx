@@ -27,7 +27,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   };
 
   return (
-    <div className="border p-4 rounded-lg shadow-md">
+    <div className="border p-4 rounded-lg shadow-md bg-[#f3f4f6] dark:text-black">
       {/* Display product image */}
       <div className="w-full h-40 flex justify-center mb-4">
         <Image
