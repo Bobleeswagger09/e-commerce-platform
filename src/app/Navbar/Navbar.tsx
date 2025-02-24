@@ -29,16 +29,16 @@ export default function Navbar() {
 
   return (
     <nav className="bg-primary text-primary-content shadow-md p-4">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
         {/* Logo and Brand Name */}
         <Link href="/" className="flex items-center text-xl font-semibold">
           <span className="ml-2 text-2xl">E-Shop</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-6">
+        <div className="hidden md:flex items-center space-x-2">
           <Link
-            href="/products"
+            href="/product"
             className="relative px-4 py-2 hover:bg-secondary hover:text-white transition duration-300 rounded-md font-semibold"
           >
             Products
@@ -85,7 +85,7 @@ export default function Navbar() {
         {/* Mobile Menu Links */}
         <div className="flex flex-col space-y-6 mt-10">
           <Link
-            href="/products"
+            href="/product"
             className="text-lg hover:bg-secondary hover:text-white p-2 rounded-md transition duration-300 font-semibold"
             onClick={() => setIsOpen(false)} // Close the menu when a link is clicked
           >

@@ -3,7 +3,7 @@
 import HeroSection from "@/components/HeroSection";
 import { ProductCard } from "@/components/ProductCard";
 import Pagination from "@/components/PaginationBox";
-import { Product, getProducts } from "@/lib/api"; // Correct import here
+import { Product, getProducts } from "@/lib/api";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -54,7 +54,6 @@ export default function Home() {
   );
 
   // Handle adding to cart
-
   if (loading)
     return <p className="text-center text-xl">Loading products...</p>;
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <div className="relative z-[-10] flex flex-col-reverse md:flex-row items-center bg-foreground p-6 rounded-lg shadow-lg px-[10%] w-full lg:max-w-[97%] mx-auto">
+    <div className="relative z-[-10] flex flex-col-reverse md:flex-row items-center bg-foreground p-6 rounded-lg shadow-lg px-[10%] w-full lg:max-w-[97%] mx-auto dark:text-black">
       <div className="md:w-1/2 text-center md:text-left">
         <h2 className="text-3xl font-bold dark:text-black">
           Discover our Curated Collection

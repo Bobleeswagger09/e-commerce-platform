@@ -6,7 +6,7 @@ export default async function ProductListPage() {
   const products = await getProducts();
 
   return (
-    <div className="container mx-auto p-6 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+    <div className="container mx-auto p-6 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 ">
       {products.map((product) => (
         <div
           key={product.id}
@@ -21,7 +21,7 @@ export default async function ProductListPage() {
             loading="lazy"
           />
           <h3 className="font-bold text-lg mt-4">{product.title}</h3>
-          <p className="text-gray-600 mt-2">${product.price}</p>
+          <p className="text-gray-600 mt-2 ">${product.price}</p>
           <button className="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded transition duration-300 ease-in-out">
             Add to Cart
           </button>

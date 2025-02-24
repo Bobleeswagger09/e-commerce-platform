@@ -18,7 +18,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { addToCart } = useCart();
   const router = useRouter();
 
-  // Remove the argument here, we have access to the product directly via props
   const handleAddToCart = () => {
     addToCart(product);
     console.log("Adding to cart:", product);
@@ -45,14 +44,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
       <div className="flex justify-center mt-4">
         <button
-          onClick={handleAddToCart} // Now calling without argument
+          onClick={handleAddToCart}
           className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600"
         >
           Add to Cart
         </button>
       </div>
 
-      {/* Link to individual product details (if any) */}
       <div className="flex justify-center mt-2">
         <Link
           href={`/product/${product.id}`}
