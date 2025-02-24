@@ -53,26 +53,23 @@ export default function Home() {
     currentPage * pageSize
   );
 
-  // Handle adding to cart
   if (loading)
     return <p className="text-center text-xl">Loading products...</p>;
 
   return (
-    <div className="container mx-auto px-2 lg:px-[2rem] py-8">
+    <div className="container mx-auto px-2 lg:px-[2rem] py-8  text-black">
       <HeroSection />
 
-      {/* Product Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 max-w-[97%] mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 max-w-[97%] mx-auto text-black">
         {paginatedProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
 
-      {/* Pagination */}
       <Pagination
         totalPages={totalPages}
         currentPage={currentPage}
-        onPageChange={setCurrentPage} // Pass setCurrentPage to Pagination
+        onPageChange={setCurrentPage}
       />
     </div>
   );
